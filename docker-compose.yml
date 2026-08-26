@@ -1,0 +1,43 @@
+# Datastores for the Restaurant Order Tracker.
+# Usage:  docker compose up -d      (then run the API and web app on the host)
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: rot-postgres
+    environment:
+      POSTGRES_USER: rot
+      POSTGRES_PASSWORD: rot_password
+      POSTGRES_DB: rot
+    ports: ["5432:5432"]
+    volumes: ["rot_pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rot -d rot"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mongo:
+    image: mongo:7
+    container_name: rot-mongo
+    ports: ["27017:27017"]
+    volumes: ["rot_mongodata:/data/db"]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: rot-redis
+    command: ["redis-server", "--appendonly", "no"]
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  rot_pgdata:
+  rot_mongodata:
