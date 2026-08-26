@@ -75,8 +75,8 @@ export default function Login({ onSignedIn }) {
         </form>
 
         <p className="hint">
-          Seeded accounts: <code>priya@restaurant.test</code> (manager) and{' '}
-          <code>arjun@restaurant.test</code> (staff), both <code>password123</code>.
+          Seeded accounts: <code>usha@restaurant.test</code> (manager) and{' '}
+          <code>deeks@restaurant.test</code> (staff), both <code>password123</code>.
           <br />
           Open a second browser window and sign in as the other one to see two staff
           competing for the same order.

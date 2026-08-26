@@ -12,7 +12,7 @@ export const pool = new pg.Pool({
   connectionString: config.postgres.url,
   max: config.postgres.poolMax,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 5000,
+  connectionTimeoutMillis: 30000,
 });
 
 pool.on('error', (err) => {

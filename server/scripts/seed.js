@@ -10,8 +10,8 @@ import { migrate } from '../src/db/migrate.js';
 import { config } from '../src/config/env.js';
 
 const USERS = [
-  { name: 'Priya Nair', email: 'priya@restaurant.test', password: 'password123', role: 'manager' },
-  { name: 'Arjun Rao', email: 'arjun@restaurant.test', password: 'password123', role: 'staff' },
+  { name: 'Usha Shetty', email: 'usha@restaurant.test', password: 'password123', role: 'manager' },
+  { name: 'Deekshith', email: 'deeks@restaurant.test', password: 'password123', role: 'staff' },
 ];
 
 const ORDERS = [
