@@ -18,7 +18,7 @@
  * same stage twice.
  */
 const BASE = process.env.API_URL || 'http://localhost:4000';
-const EMAIL = process.env.SEED_EMAIL || 'priya@restaurant.test';
+const EMAIL = process.env.SEED_EMAIL || 'usha@restaurant.test';
 const PASSWORD = process.env.SEED_PASSWORD || 'password123';
 const CONTENDERS = Number(process.env.CONTENDERS || 2);
 
