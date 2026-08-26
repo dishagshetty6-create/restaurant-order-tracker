@@ -45,7 +45,7 @@ export default function Login({ onSignedIn }) {
 
           <div className="field">
             <label htmlFor="email">Email</label>
-            <input id="email" type="email" value={form.email} onChange={update('email')} required />
+            <input id="email" type="email" value={form.email} onChange={update('email')} required autoComplete="off" />
           </div>
 
           <div className="field">
